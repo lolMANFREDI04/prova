@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Modifica</h1>
+<div class="campi">
+  <div mat-dialog-content class="campi"><p>Nome: <input type="text" id="titleee"  [(ngModel)] = 'valore' /><br><p class="error">{{gg}}</p></p></div>
+  <div mat-dialog-content class="campi"><p>Immagine: <input type="text" style="padding: 0%;" id="immagine" [(ngModel)] = 'data.carta.immagine' /><br></p></div>
+  <div mat-dialog-content class="campi"><p>Descrizione: <textarea cols="25" rows="5" style="padding: 0%; resize: none;" id="descrizione" [(ngModel)] = 'data.carta.Descrizione' ></textarea><br></p></div>
+
+</div>
+<div id="dov">
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" type="submit" (click)="bozza()">Salva</button>
+  </div>
+</div>

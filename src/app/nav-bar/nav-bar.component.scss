@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+
+body {
+  display: flex;
+  justify-content: center; /* Centra orizzontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Riempi l'altezza della viewport */
+  margin: 0; /* Rimuovi il margine predefinito del corpo */
+}
+
+#title{
+  color:#f2f2f2;
+  font-family: 'Rubik', sans-serif;
+  font-size: 30px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: 16px; /* Aggiungi spazio tra il logo e gli altri elementi */
+}
+
+.logo-button {
+  padding: 0; /* Rimuovi il padding per un aspetto più pulito */
+}
+
+#logo {
+  border-radius: 5px;
+  width: 100%; /* Riduci la larghezza al 100% del container */
+  height: auto;
+}
+
+
+/*.example-spacer-left {
+  //flex: 1 1 auto;
+  padding-left: 25%;
+}*/
+
+.example-spacer {
+  flex: 1 1 auto;
+  //padding-right: 35%;
+}
+
+#toolbar{
+  //background-color: gray;
+  background-color: #222021;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#ricercato{
+  padding: 3.6%; /* Spazio interno 10px */
+  //border: 1px solid #ccc; /* Bordo grigio */
+  border: 1px solid gray; //1px
+  border-radius: 30px; /* Angoli arrotondati 5px*/
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); /* Effetto ombreggiatura interna */
+  //width: 330px; /* Larghezza desiderata */
+  transition: width 0.1s ease-in-out, border-radius 0.1s ease-in-out; /* Transizione per l'animazione di ingrandimento */
+  width: 200px; /* Larghezza iniziale */
+
+  font-size: 16px; /* Dimensione del testo */
+  //background-color: #5f5f5f;
+  background-color:#ffff;
+  text-align: center;
+  padding-right: 12%; /* Spazio a destra per l'icona */
+  padding-left: 12%;
+  box-sizing: border-box; /* Includi il padding nel calcolo della larghezza */
+}
+
+#ricercato:focus {
+  width: 330px; /* Larghezza dopo il clic */
+  border-radius: 5px;
+  outline: none;
+}
+
+#ricercato::placeholder {
+  //color: #d1d0d0; /* Colore del testo del placeholder */
+  color: gray;
+  text-align: center;
+  //font-style: italic; /* Stile del testo del placeholder (opzionale) */
+}
+
+#ricercato-container {
+  position: relative;
+  //margin-left: -15.7%; //-7
+  margin-right: 16%;
+}
+
+
+#ricerca-icon {
+  position: absolute;
+  top: 50%;
+  right: 0; /* Distanza dal bordo destro */
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+mat-icon{
+  color:#f2f2f2;
+}
+
+//pannello a tendina
+
+#menu-tendina{
+  position: absolute;
+  z-index: 1000;
+  width: 12%;
+  background-color: #D2D2D2;
+  text-align: center;
+  //justify-items: center;
+  height: 2%;
+}
+
+#menu-tendina.closed {
+  display: none;
+}
+
+@media only screen and (max-width: 920px) {
+  #title{
+    font-size: medium;
+  }
+  #ricercato-container{
+    margin-right: 13%;
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  #ricercato{
+    width: 100px;
+    margin-left: 30px;
+  }
+  #ricercato:focus {
+    width: 100px; /* Larghezza dopo il clic */
+    border-radius: 5px;
+  }
+
+  #title{
+    font-size: smaller;
+  }
+
+  #ricerca-icon{
+    display: none;
+  }
+
+  #menu-tendina{
+    width: 28%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #title{
+    font-size: x-small;
+  }
+  #ricercato-container{
+    margin-right: 7%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #ricercato-container{
+    margin-right: 10%;
+    margin-left: 0%;
+  }
+  #title{
+    //display: none;
+    font-size: xx-small;
+  }
+  #logo{
+    width: 30px; /* Riduci la larghezza al 100% del container */
+    height: auto;
+  }
+  .logo-container{
+    margin-left: 0px;
+    margin-top: 8px;
+    margin-right: 8px;
+  }
+  #toolbar{
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  #menu-tendina{
+    width: 40%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .tendina-item{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+

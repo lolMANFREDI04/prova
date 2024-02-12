@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap');
+
+$color1: rgb(255, 123, 0);
+$color2: rgb(255, 255, 255);
+
+#gg{
+  background-color: $color1;
+  color: $color2;
+  font-family: 'Rubik', sans-serif;
+  margin-top: 30px;
+}
+
+#product {
+  margin-top: 30px;
+  clear: both; /* Assicura che il contenitore #product includa entrambi gli elementi */
+  margin-bottom: 20px;
+}
+
+#div-img{
+  width: 30%;
+  height: 100%;
+  border: 2px solid black;
+  float: left; /* Allinea l'immagine a sinistra */
+  margin-right: 50px; /* Aggiunge uno spazio tra l'immagine e il testo */
+}
+
+#grandezza{
+  clear: both; /* Pulisce il float e assicura che l'elemento sia posizionato sotto l'immagine */
+  float: left; /* Allinea l'elemento a sinistra */
+  width: 30%; /* Imposta la larghezza dell'elemento */
+  margin-top: 3px; /* Aggiunge uno spazio sopra l'elemento */
+  text-align: center;
+}
+
+.text-right{
+  overflow: hidden; /* Pulisce il float e evita problemi di layout */
+  margin-right: 50px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+#img{
+  width: 100%;
+  height: auto;
+
+}
+
+.nome {
+  text-align: center; /* Centra solo il testo del Nome */
+  font-size: 60px;
+  margin: 0px;
+}
+
+.dettagli{
+  font-size: larger;
+}
+
+.acquista{
+  display: flex;
+  align-items: center;
+}
+
+#prezzo{
+  margin-right: 20px;
+}
+
+#Add{
+  background-color: blue;
+  color: white;
+  width: 300px;
+  font-family:Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Per consentire il passaggio a capo */
+  flex-direction: row;
+  justify-content: center;
+}
+
+.link {
+  text-decoration: none; /* Rimuovi la sottolineatura del link */
+  color: #333; /* Imposta il colore del testo desiderato */
+  /* Aggiungi altri stili se necessario */
+}
+
+.card {
+  width: 240px; //190
+  height: 340px; //254
+
+  border-radius: 20px;
+  transition: all .3s;
+  color: black;
+
+  margin: 10px; /* Spaziatura tra le carte */
+  margin-top: 40px;
+  align-items: center;
+  cursor: pointer;
+
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+.card2 {
+  width: 240px;
+  height: 340px;
+  background-color: rgb(246, 245, 245);
+  border-radius: 20px;
+  transition: all .2s;
+  border: 1px solid #ccc; /* Bordo per evidenziare le carte */
+  padding: 10px;
+  font-family: 'Rubik', sans-serif;
+
+
+}
+
+.card2:hover {
+  transform: scale(0.98);
+}
+
+.card-ridotta{
+  transform: scale(0.98);
+}
+
+/*.card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(255, 0, 0, 0.3);
+}*/
+
+//prodotto
+
+.divImg{
+  //height: 230px;
+  //width: 230px;
+  height: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image{
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+}
+
+#card-text{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#ddd{
+  font-size: larger;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.name{
+  font-size: larger;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%; /* Imposta la larghezza massima del testo */
+}
+
+#price{
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  //font-weight: bold;
+}
+
+#matitaB{
+  //position: absolute;
+  ///float: right;
+
+  /*bottom: 20px;
+  right: 10px;
+  transform: translateY(-50%);*/
+}

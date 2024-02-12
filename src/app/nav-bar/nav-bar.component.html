@@ -1,0 +1,45 @@
+<mat-toolbar id="toolbar">
+  <div class="logo-container">
+    <button mat-icon-button (click)="togglePanel()" class="logo-button" aria-label="Example icon-button with menu icon">
+      <img id="logo" src="https://media.discordapp.net/attachments/776414479218638879/1189866721939558440/teddy-bear-logo-modern-flat-cute-plushy-toy-vector-8667521.jpg?ex=659fb8bd&is=658d43bd&hm=3fd8af157225934f6ac79610c1ddd156df330a64e7008391251079a3c4d92a73&=&format=webp&width=396&height=395"/>
+    </button>
+  </div>
+  <span id="title">Negozietto Pupazzi</span>
+  <span class="example-spacer">
+  </span>
+  <div id="ricercato-container">
+    <input type="text" id="ricercato" placeholder="ricerca" >
+    <button mat-icon-button id="ricerca-icon">
+      <mat-icon style="color:#222021">search</mat-icon>
+    </button>
+  </div>
+  <span class="example-spacer">
+
+  </span>
+
+  <button mat-icon-button aria-label="Example icon-button with share icon">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="Example icon-button with heart icon">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="Example icon-button with share icon">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div id="menu-tendina" [hidden]="!panelOpenState">
+<mat-accordion>
+  <mat-expansion-panel [expanded]="panelOpenState" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+
+    <mat-list>
+
+      <mat-list-item class="tendina-item" (click)="navigateTo('home')">Home</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item class="tendina-item" (click)="navigateTo('chi-siamo')">Chi Siamo</mat-list-item>
+
+    </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>
+</div>
+<router-outlet></router-outlet>

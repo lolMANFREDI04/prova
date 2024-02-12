@@ -1,0 +1,77 @@
+<!--<div class="card">
+  <div class="card2">
+  </div>
+</div>-->
+
+<button mat-raised-button (click)="deleteMode()">Selezione</button>
+<button mat-raised-button (click)="delt()" [style.background-color]="disattivato">Cancella</button>
+<div *ngIf="peluche">
+  <div class="container">
+    <div *ngFor="let carta of peluche; let d = index">
+      <div class="card" [style.background-image]="selez">
+        <ng-container *ngIf="bool==false; else selectCard">
+
+        <a class="link" routerLink="dettagli/{{carta.id}}">
+          <div class="card2"  >
+            <div class="divImg">
+              <img src={{carta.immagine}} class="image" />
+            </div>
+            <div id="card-text">
+              <div id="ddd">
+                <h4 class="name">{{carta.Nome}}</h4>
+                <p id="price">{{carta.Prezzo}}€</p>
+              </div>
+
+              ciao
+              <button  mat-icon-button aria-label="Example icon-button with share icon" id="inputBox" (click)=" openDialog(carta); stop($event);">
+                <mat-icon>exit_to_app</mat-icon>
+              </button>
+            </div>
+          </div>
+
+        </a>
+        </ng-container>
+
+        <ng-template #selectCard>
+
+
+          <a class="link" (click)="select(carta.id);">
+                                                           <!--CartaID-->
+            <div class="card2" [ngClass]="free[d].boolla ? 'card-ridotta' : 'card2'">  <!--selCardId[d] == carta.id-->
+              <div class="divImg">
+                <img src={{carta.immagine}} class="image" />
+              </div>
+              <div id="card-text">
+                <div id="ddd">
+                  <h4 class="name">{{carta.Nome}}</h4>
+                  <p id="price">{{carta.Prezzo}}€</p>
+                </div>
+
+                <button  mat-icon-button aria-label="Example icon-button with share icon" id="inputBox" (click)=" openDialog(carta); stop($event);">
+                  <mat-icon>exit_to_app</mat-icon>
+                </button>
+              </div>
+            </div>
+
+          </a>
+        </ng-template>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>{{carta.Nome}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{carta.id}}</p>
+        <p>{{carta.Prezzo}}</p>
+      </mat-card-content>
+      <div class="container">
+        <mat-card-content>
+          <h2>{{carta.Quantita}}</h2>
+        </mat-card-content>
+      </div>
+    </mat-card> -->
