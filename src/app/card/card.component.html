@@ -36,8 +36,8 @@
 
 
           <a class="link" (click)="select(carta.id);">
-                                                           <!--CartaID-->
-            <div class="card2" [ngClass]="free[d].boolla ? 'card-ridotta' : 'card2'">  <!--selCardId[d] == carta.id-->
+                                                    <!--CartaID-->
+            <div class="card2" [ngClass]="free[d].boolla && free[d].idCardino == carta.id ? 'card-ridotta' : 'card2'">  <!--selCardId[d] == carta.id-->
               <div class="divImg">
                 <img src={{carta.immagine}} class="image" />
               </div>
