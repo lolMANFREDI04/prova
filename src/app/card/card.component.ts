@@ -157,7 +157,7 @@ export class CardComponent implements OnInit {
   CartaID:any;
 
   select(cardId: any) {
-    this['d']=0;
+
 
 
     // for(var i=0; i<this.selCardId.length; i++){
@@ -247,7 +247,8 @@ export class CardComponent implements OnInit {
       // if(this.free[i].idCardino!=0){
 
       // }else{
-      if(this.free[p].idCardino!=0){
+
+      /*if(this.free[p].idCardino!=0){
         do{
           p=p+1;
         }while(this.free[p].idCardino!=0);  // && this.free[p].idCardino!=cardId
@@ -256,11 +257,13 @@ export class CardComponent implements OnInit {
 
       this.selCardId.push(cardId);
 
-      this.free[p].idCardino=this.selCardId[p];
+      this.free[p].idCardino=this.selCardId[p];*/
+
+      this.selCardId.push(cardId);
 
 
     }
-    a=true;
+    // a=true;
 
 
 
@@ -269,6 +272,14 @@ export class CardComponent implements OnInit {
       console.log(this.selCardId[i]);
     }
     // Puoi fare ulteriori operazioni qui in base alle tue esigenze
+  }
+
+  toggleCardClass(index: number, cardId: number) {
+    if (this.selCardId[index] === cardId) {
+      this.selCardId[index] = 0; // Deselecting the card
+    } else {
+      this.selCardId[index] = cardId; // Selecting the card
+    }
   }
 
   //buttonColor: string = '';

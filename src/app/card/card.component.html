@@ -35,25 +35,22 @@
         <ng-template #selectCard>
 
 
-          <a class="link" (click)="select(carta.id);">
-                                                    <!--CartaID-->
-            <div class="card2" [ngClass]="free[d].boolla && free[d].idCardino == carta.id ? 'card-ridotta' : 'card2'">  <!--selCardId[d] == carta.id-->
-              <div class="divImg">
-                <img src={{carta.immagine}} class="image" />
-              </div>
-              <div id="card-text">
-                <div id="ddd">
-                  <h4 class="name">{{carta.Nome}}</h4>
-                  <p id="price">{{carta.Prezzo}}€</p>
-                </div>
-
-                <button  mat-icon-button aria-label="Example icon-button with share icon" id="inputBox" (click)=" openDialog(carta); stop($event);">
-                  <mat-icon>exit_to_app</mat-icon>
-                </button>
-              </div>
+          <div class="card2" *ngFor=" let d = index"
+              [ngClass]="selCardId[d] == carta.id ? 'card-ridotta' : 'card2'"
+              (click)="toggleCardClass(d, carta.id)">
+            <div class="divImg">
+              <img src={{carta.immagine}} class="image" />
             </div>
-
-          </a>
+            <div id="card-text">
+              <div id="ddd">
+                <h4 class="name">{{carta.Nome}}</h4>
+                <p id="price">{{carta.Prezzo}}€</p>
+              </div>
+              <button mat-icon-button aria-label="Example icon-button with share icon" id="inputBox" (click)="openDialog(carta); stop($event);">
+                <mat-icon>exit_to_app</mat-icon>
+              </button>
+            </div>
+          </div>
         </ng-template>
 
 
