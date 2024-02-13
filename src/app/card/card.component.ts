@@ -183,6 +183,7 @@ export class CardComponent implements OnInit {
     var con:boolean=false;
 
     for(var i=0; i<=this.selCardId.length; i++){
+      debugger;
 
       // this.free[i].IdSel=this.selCardId[i];
       if(a==true){
