@@ -157,7 +157,7 @@ export class CardComponent implements OnInit {
   CartaID:any;
 
   select(cardId: any) {
-    this['d']=0;
+    //this['d']=0;
 
 
     // for(var i=0; i<this.selCardId.length; i++){
