@@ -8,11 +8,11 @@
 <div *ngIf="peluche">
   <div class="container">
     <div *ngFor="let carta of peluche; let d = index">
-      <div class="card" [style.background-image]="selez">
+      <div id="card-{{carta.id}}" class="card" [style.background-image]="selez">
         <ng-container *ngIf="bool==false; else selectCard">
 
         <a class="link" routerLink="dettagli/{{carta.id}}">
-          <div class="card2"  >
+          <div class="card2">
             <div class="divImg">
               <img src={{carta.immagine}} class="image" />
             </div>
@@ -34,10 +34,10 @@
 
         <ng-template #selectCard>
 
+          <a class="link" (click)="selected(carta.id);">
 
-          <a class="link" (click)="select(carta.id);">
-                                                    <!--CartaID-->
-            <div class="card2" [ngClass]="free[d].boolla && free[d].idCardino == carta.id ? 'card-ridotta' : 'card2'">  <!--selCardId[d] == carta.id-->
+            <!--CartaID-->
+            <div id="card2-{{carta.id}}" class="card2">
               <div class="divImg">
                 <img src={{carta.immagine}} class="image" />
               </div>

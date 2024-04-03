@@ -81,212 +81,80 @@ export class CardComponent implements OnInit {
     this.changeDetectorRef.detectChanges();
   }
 
-
-
   stop(e: any) {
     debugger;
     e.stopPropagation();
     return false;
   }
 
-  delButtV: boolean=true;
-
   disattivato: string= 'gray';
 
   selez:string=  "linear-gradient(163deg, #f5f500 0%, #ff3c00 100%)";
 
-
   deleteMode(){
     debugger
-    for(var i=0; i<this.peluche.length; i++){
-      this.free[i]={
-        boolla: false,
-        idCardino: 0
-      }
-    }
     if(this.bool==false){
       this.bool=true;
       this.disattivato="white";
       this.selez=  "linear-gradient(163deg, #00fff7 0%, #3300ff 100%)";
-      //this.peluche.map((pel) => {const ogg = new Oggetto {c = pel.id, boo = false}; this.free.p})
 
     }else{
       this.bool=false;
       for(var i=0; i<this.selCardId.length; i++){
         this.selCardId.splice(i, 1);
-        this.free[i].boolla=false;
+
+        var mioElemento = document.getElementById("card-"+this.selCardId[i])
+
+        if(mioElemento) { // Verifica se l'elemento esiste prima di rimuovere la classe
+          mioElemento.classList.remove("card-ridotta");
+        }
       }
-      // this.delButtV= false;
       this.disattivato="gray";
       this.selez=  "linear-gradient(163deg, #f5f500 0%, #ff3c00 100%)";
-      // this.con=false;
-
     }
 
   }
 
-
-
-  //dataObject: { [idCard: number]: boolean } = {};
-
-
-  //con:boolean=false;
-
-  // con:boolean[]=[];
-
-  // free: Oggetto;
-
-  // free: any[{
-  //   ciao: boolean,
-  //   IdSel: number
-  // }]=[];
-
-
-
-  // {
-  //   boolla: false,
-  //   idCardino: 0
-  // }
-
-  //colSel:boolean=false;
-
-  free: Oggetto[]=[];
-
   selCardId: number[] = [];
 
-  CartaID:any;
+  selected(cardId: any){
+    debugger;
 
-  select(cardId: any) {
-    this['d']=0;
-
-
-    // for(var i=0; i<this.selCardId.length; i++){
-    //   this.free[i]={
-    //     boolla: false,
-    //     idCardino: this.selCardId[i]
-    //   }
-    // }
-
-    this.CartaID= cardId;
-
-
-    // for(var i=0; i<this.peluche.length;i++){
-
-    // }
-
-
-    // Aggiungi l'ID della carta selezionata all'array
-    //this.selCardId.push(cardId);
+    var mioElemento = document.getElementById("card2-"+cardId)
 
     var a:boolean=false;
 
-    var con:boolean=false;
+    var con:boolean=true;
 
     for(var i=0; i<=this.selCardId.length; i++){
 
-      // this.free[i].IdSel=this.selCardId[i];
       if(a==true){
         break;
       }
 
-      if(this.selCardId[i]==cardId){  //&& this.free[i].boolla==true  // && this.free[i].boolla==true
+      if(this.selCardId[i]==cardId){
         if(a==false){
           this.selCardId.splice(i, 1);
-          //this.scale= "scale(1)";
-          // this.con=false;
-          this.free[i].boolla=false;
-          this.free[i].idCardino=0;
 
-          //con=this.free[i].boolla;
+          if(mioElemento) { // Verifica se l'elemento esiste prima di rimuovere la classe
+            mioElemento.classList.remove("card-ridotta");
+          }
 
           a=true;
           con=false;
         }
-
-
-
-      }else{
-        con=true;
-
-        //a=true;
-        // if(a==false){
-        //   this.free[i].boolla=true;
-        //   //this.con=this.free[i].boolla;
-        //   this.selCardId.push(cardId);
-        //   // if(this.free[i].idCardino!=0){
-
-        //   // }else{
-        //   if(this.free[i].idCardino!=0){
-        //     do{
-        //       i=i+1;
-        //     }while(this.free[i].idCardino!=0);
-        //   }
-        //   this.free[i].idCardino=this.selCardId[i];
-
-        // }
-        // a=true;
-
       }
-
-
-
-      // if(this.free[i].boolla==true){
-      //   this.selCardId.push(cardId);
-      //   this.free[i].idCardino=this.selCardId[i];
-      //   //this.scale= "scale(0.98)";
-      // }
     }
-
-    var p: number=0;
 
     if(con==true){
 
-      //this.con=this.free[i].boolla;
-
-      // if(this.free[i].idCardino!=0){
-
-      // }else{
-      if(this.free[p].idCardino!=0){
-        do{
-          p=p+1;
-        }while(this.free[p].idCardino!=0);  // && this.free[p].idCardino!=cardId
-      }
-      this.free[p].boolla=true;
-
       this.selCardId.push(cardId);
 
-      this.free[p].idCardino=this.selCardId[p];
-
-
+      if(mioElemento)
+        mioElemento.classList.add("card-ridotta");
     }
     a=true;
-
-
-
-
-    for(var i=0; i<this.selCardId.length; i++){
-      console.log(this.selCardId[i]);
-    }
-    // Puoi fare ulteriori operazioni qui in base alle tue esigenze
   }
-
-  //buttonColor: string = '';
-
-
-  //scale:string= "";
-
-  sezionato:boolean=false;
-
-  // ChangeCol(){
-  //   //this.buttonColor = 'blue';
-
-  //   this.sezionato=true;
-
-  //   this.scale= "scale(0.98)";
-  //   this.selez="linear-gradient(163deg, #00fff7 0%, #3300ff 100%)";
-
-
-  // }
 
   delt(): void{
     debugger
@@ -306,19 +174,7 @@ export class CardComponent implements OnInit {
 
   }
 
-  gg(){
-    console.log("ciao");
-  }
-
-  // select(bool:boolean){
-  //   const dial = new MatDialogConfig();
-  //   dial.data = { bool: bool }; // Imposta i dati che vuoi passare al dialog
-
-  //   this.dialog.open(DialogElementsExampleDialog, dial);
-  // }
-
   openDialog(carta: any) {
-    //const InC = new MatDialogConfig();
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = { carta: carta, cardComponent: this }; // Imposta i dati che vuoi passare al dialog
 
@@ -360,10 +216,6 @@ export class DialogElementsExampleDialog {
 
 
   dialog:any;
-  /*InonC(err:any):any{
-    this.dialog= err;
-
-  }*/
 
   bozza() {
     if(this.valore.length>4){
@@ -408,7 +260,4 @@ export class DialogElementsExampleDialog {
     this.gg="il nome deve contenere 5 o più caratteri";
   }
 
-  // modificaDatiNelServer(): void {
-
-  // }
 }
