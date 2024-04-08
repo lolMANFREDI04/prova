@@ -67,7 +67,7 @@ export class TempAxiosComponent {
 
 
         console.log('Dati dal server:', this.prodotto);
-        this.ChangeDetectorRef.detectChanges();
+        //this.ChangeDetectorRef.detectChanges();
       })
       .catch((error) => {
         console.error(error);
